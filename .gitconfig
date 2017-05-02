@@ -1,0 +1,40 @@
+[http]
+  sslVerify = false
+[user]
+  email = mludwig@mitre.org
+  name = Mike Ludwig
+[credential]
+  helper = cache
+[color]
+  ui = auto
+[alias]
+  # list commits
+  l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lg = "!git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+
+  a = add
+  c = commit -m
+  ca = commit --amend
+
+  d = diff
+  ds = diff --stat
+  dc = diff --cached
+
+  s = status -s
+  co = checkout
+  b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+  # search files
+  gr = grep -Ii
+
+  st = stash
+  sl = stash list
+  sp = stash pop
+  
+  fl = log -u
+  
+  # bclean = "!git branch --merged master | grep -v -e "master" -e "\*" | xargs -n 1 git branch -d && git remote prune origin"
+
+  # list aliases
+  la = "!git config -l | grep alias | cut -c 7-"
