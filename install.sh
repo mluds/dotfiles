@@ -1,4 +1,6 @@
-# Get directory name of this script
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# Get dotfiles directory
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/dotfiles"
 
-ln -sf $DIR/vimrc ~/.vimrc
+for name in $(ls $DIR); do
+  ln -sf $DIR/$name ~/.$name
+done
