@@ -8,5 +8,8 @@ fi
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
 
+# Vi mode
+set -o vi
+
 # User specific aliases and functions
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
