@@ -1,16 +1,29 @@
-"Vundle"
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'valloric/youcompleteme'
-call vundle#end()
-filetype plugin indent on
+syntax on
 
-set tabstop=4 shiftwidth=4 softtabstop=4
-set expandtab autoindent smartindent
-set backupdir=$TEMP,. directory=$TEMP,.
+" Tabs
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+set smartindent
+
+set nobackup
+set nowritebackup
+set noswapfile
+
 set backspace=indent,eol,start
 set number
-syntax on
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
+
+" Make it obvious where 80 characters is
+set textwidth=80
+set colorcolumn=+1
+
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
