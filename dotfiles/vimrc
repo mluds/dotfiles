@@ -29,5 +29,5 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 " Key sequence timeouts
-set timeoutlen=500
+set timeoutlen=100
 set ttimeoutlen=0
