@@ -12,7 +12,10 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Make backspace behave normally
 set backspace=indent,eol,start
+
+" Show line numbers
 set number
 
 " Display extra whitespace
@@ -35,3 +38,15 @@ set ttimeoutlen=0
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Highlight search results
+set hlsearch
+
+" Ignore case when searching
+set ignorecase
