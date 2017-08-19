@@ -11,6 +11,7 @@ set softtabstop=4
 " Tab key inserts spaces
 set expandtab
 
+set smarttab
 set autoindent
 set smartindent
 
@@ -21,6 +22,9 @@ set noswapfile
 
 " Make backspace behave normally
 set backspace=indent,eol,start
+
+" Horizontal movement wraps when at the start or end of a line
+set whichwrap+=<,>,h,l
 
 " Show line numbers
 set number
