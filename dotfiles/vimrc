@@ -57,3 +57,6 @@ set hlsearch
 
 " Ignore case when searching
 set ignorecase
+
+" Set to auto read when a file is changed from the outside
+set autoread
