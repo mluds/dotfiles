@@ -3,14 +3,18 @@ if !exists("g:syntax_on")
     syntax enable
 endif
 
-" Tabs
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+" Tab width; backspace properly removes a tab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+" Tab key inserts spaces
 set expandtab
+
 set autoindent
 set smartindent
 
+" Don't write backup files
 set nobackup
 set nowritebackup
 set noswapfile
