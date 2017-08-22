@@ -73,3 +73,6 @@ set wildmenu
 
 " Lines from screen edge when vertical scrolling starts
 set so=5
+
+" Highlight current line
+set cursorline
