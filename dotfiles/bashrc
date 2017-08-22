@@ -10,4 +10,5 @@ set -o vi
 stty -ixon
 
 # User specific aliases and functions
+alias ll='ls -l'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
