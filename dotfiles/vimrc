@@ -3,6 +3,9 @@ if !exists("g:syntax_on")
     syntax enable
 endif
 
+" Colorscheme: desert makes search and visual highlighting bearable
+colo desert
+
 " Tab width; backspace properly removes a tab
 set tabstop=4
 set shiftwidth=4
