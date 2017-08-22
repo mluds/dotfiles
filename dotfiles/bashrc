@@ -6,5 +6,8 @@ fi
 # Vi mode
 set -o vi
 
+# Disable C-S C-Q halting
+stty -ixon
+
 # User specific aliases and functions
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
