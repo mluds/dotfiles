@@ -72,4 +72,4 @@ set autoread
 set wildmenu
 
 " Lines from screen edge when vertical scrolling starts
-set so=7
+set so=5
