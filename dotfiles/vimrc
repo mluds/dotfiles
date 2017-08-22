@@ -70,3 +70,6 @@ set autoread
 
 " Visual autocomplete for command menu
 set wildmenu
+
+" Lines from screen edge when vertical scrolling starts
+set so=7
