@@ -9,6 +9,10 @@ set -o vi
 # Disable C-S C-Q halting
 stty -ixon
 
-# User specific aliases and functions
+# Aliases
 alias ll='ls -l'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+
+# History size
+export HISTSIZE=10000
+export HISTFILESIZE=10000
