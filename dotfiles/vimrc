@@ -1,3 +1,16 @@
+" Vundle plugin manager
+let vundle_path=expand('~/.vim/bundle/Vundle.vim')
+if !empty(glob(vundle_path))
+    set nocompatible
+    filetype off
+    exe 'set rtp+=' . vundle_path
+    call vundle#begin()
+    Plugin 'VundleVim/Vundle.vim'
+    Plugin 'scrooloose/nerdtree'
+    call vundle#end()
+    filetype plugin indent on
+endif
+
 " Syntax highlighting; don't clobber existing highlighting
 if !exists("g:syntax_on")
     syntax enable
