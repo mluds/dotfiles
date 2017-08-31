@@ -13,6 +13,7 @@ stty -ixon
 alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias df='df -Th'
+alias mkdir='mkdir -p'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # History size
