@@ -17,3 +17,4 @@ alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 # History size
 export HISTSIZE=10000
 export HISTFILESIZE=10000
+export GREP_OPTIONS='--color=auto'
