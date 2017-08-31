@@ -11,7 +11,7 @@ stty -ixon
 
 # Aliases
 alias ls='ls --color=auto'
-alias ll='ls -la'
+alias ll='ls -lah'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # History size
