@@ -10,7 +10,8 @@ set -o vi
 stty -ixon
 
 # Aliases
-alias ll='ls -l'
+alias ls='ls --color=auto'
+alias ll='ls -la'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # History size
