@@ -25,3 +25,6 @@ export GREP_OPTIONS='--color=auto'
 
 # Ignore duplicate history entries
 export HISTCONTROL=ignoredups
+
+export WORKON_HOME=$HOME/pyenvs
+source /usr/local/bin/virtualenvwrapper.sh
