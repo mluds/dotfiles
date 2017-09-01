@@ -1,15 +1,6 @@
-" Vundle plugin manager
-let vundle_path=expand('~/.vim/bundle/Vundle.vim')
-if !empty(glob(vundle_path))
-    set nocompatible
-    filetype off
-    exe 'set rtp+=' . vundle_path
-    call vundle#begin()
-    Plugin 'VundleVim/Vundle.vim'
-    Plugin 'scrooloose/nerdtree'
-    call vundle#end()
-    filetype plugin indent on
-endif
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+call plug#end()
 
 " Syntax highlighting; don't clobber existing highlighting
 if !exists("g:syntax_on")
@@ -92,3 +83,5 @@ set so=5
 
 " Highlight current line
 set cursorline
+
+map <C-n> :NERDTreeToggle<CR>
