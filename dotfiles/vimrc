@@ -1,5 +1,6 @@
 " vim-plug plugin manager
 call plug#begin('~/.vim/plugged')
+Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 call plug#end()
 
@@ -8,8 +9,9 @@ if !exists("g:syntax_on")
     syntax enable
 endif
 
-" Colorscheme: desert makes search and visual highlighting bearable
-colo desert
+" Color scheme
+set background=dark
+colo solarized
 
 " Tab width; backspace properly removes a tab
 set tabstop=4
