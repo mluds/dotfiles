@@ -10,9 +10,18 @@ set -o vi
 stty -ixon
 
 # Aliases
-alias ll='ls -l'
+alias ls='ls --color=auto'
+alias ll='ls -lah'
+alias df='df -Th'
+alias mkdir='mkdir -p'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # History size
 export HISTSIZE=10000
 export HISTFILESIZE=10000
+
+# Grep color
+export GREP_OPTIONS='--color=auto'
+
+# Ignore duplicate history entries
+export HISTCONTROL=ignoredups
