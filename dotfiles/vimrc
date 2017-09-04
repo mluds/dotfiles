@@ -19,6 +19,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+" Language specific indentation
+autocmd FileType yaml setlocal ts=2 sw=2 sts=2
+
 " Tab key inserts spaces
 set expandtab
 
@@ -46,12 +49,6 @@ set list listchars=tab:»·,trail:·,nbsp:·
 " Make it obvious where 80 characters is
 set textwidth=80
 set colorcolumn=+1
-
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
 
 " Key sequence timeouts
 set timeoutlen=100
