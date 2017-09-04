@@ -11,7 +11,8 @@ endif
 
 " Color scheme
 set background=dark
-colo solarized
+silent! colo desert
+silent! colo solarized
 
 " Tab width; backspace properly removes a tab
 set tabstop=4
