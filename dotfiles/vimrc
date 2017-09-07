@@ -3,6 +3,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'mileszs/ack.vim'
+Plug 'shougo/vimproc.vim'
+Plug 'idanarye/vim-vebugger'
 call plug#end()
 
 " Syntax highlighting; don't clobber existing highlighting
