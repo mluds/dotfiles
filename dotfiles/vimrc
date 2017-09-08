@@ -1,3 +1,7 @@
+" Force utf-8
+scriptencoding utf-8
+set encoding=utf-8
+
 " vim-plug plugin manager
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
@@ -87,3 +91,6 @@ set so=5
 
 " Open NERDTree
 map <C-n> :NERDTreeToggle<CR>
+
+" Disable error sounds
+set noeb vb t_vb=
