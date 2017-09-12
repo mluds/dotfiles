@@ -1,3 +1,4 @@
+
 autoload -Uz compinit promptinit
 compinit
 promptinit
@@ -18,10 +19,15 @@ setopt EXTENDED_HISTORY
 
 unsetopt FLOW_CONTROL  # Disable ctrl-S/Q tty halting
 
-alias ls="ls -h --color='auto'"
-alias ll='ls -l'
+alias ls='ls --color=auto'
+alias ll='ls -lah'
+alias vi='vim'
+alias df='df -Th'
+alias mkdir='mkdir -p'
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 SAVEHIST=10000
 HISTSIZE=10000
 
 export EDITOR=vim
+export GREP_OPTIONS='--color=auto'
