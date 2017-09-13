@@ -1,4 +1,3 @@
-
 autoload -Uz compinit promptinit
 compinit
 promptinit
@@ -26,8 +25,14 @@ alias df='df -Th'
 alias mkdir='mkdir -p'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
+# History search
+bindkey '^R' history-incremental-search-backward
+bindkey '^F' history-incremental-search-forward
+
 SAVEHIST=10000
 HISTSIZE=10000
+HISTFILE=~/.zsh_history
 
 export EDITOR=vim
 export GREP_OPTIONS='--color=auto'
+export KEYTIMEOUT=1  # Delay when switching to normal mode in shell
