@@ -29,6 +29,10 @@ alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 bindkey '^R' history-incremental-search-backward
 bindkey '^F' history-incremental-search-forward
 
+# Allow deleting after switching vi mode
+bindkey '^?' backward-delete-char
+bindkey '^H' backward-delete-char
+
 SAVEHIST=10000
 HISTSIZE=10000
 HISTFILE=~/.zsh_history
