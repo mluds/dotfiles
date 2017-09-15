@@ -72,7 +72,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-nnoremap \ :Ack<SPACE>
+nnoremap \ :Ack!<SPACE>
 
 " Highlight search results
 set hlsearch
