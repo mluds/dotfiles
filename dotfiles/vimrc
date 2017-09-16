@@ -2,9 +2,6 @@
 scriptencoding utf-8
 set encoding=utf-8
 
-" Fix rendering issue
-set tenc=utf8
-
 " vim-plug plugin manager
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
