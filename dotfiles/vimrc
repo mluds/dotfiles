@@ -7,6 +7,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'mileszs/ack.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'valloric/youcompleteme'
 Plug 'shougo/vimproc.vim'
 Plug 'idanarye/vim-vebugger'
 call plug#end()
@@ -15,6 +17,9 @@ call plug#end()
 if !exists("g:syntax_on")
     syntax enable
 endif
+
+" Recursively look for files using 'find'
+set path+=**
 
 " Color scheme
 set background=dark
@@ -58,7 +63,7 @@ set textwidth=80
 set colorcolumn=+1
 
 " Key sequence timeouts
-set timeoutlen=100
+set timeoutlen=500
 set ttimeoutlen=0
 
 " Open new split panes to right and bottom, which feels more natural
@@ -70,6 +75,15 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+" Tab navigation
+nnoremap th :tabfirst<CR>
+nnoremap tj :tabnext<CR>
+nnoremap tk :tabprev<CR>
+nnoremap tl :tablast<CR>
+nnoremap td :tabclose<CR>
+nnoremap tt :tabedit<Space>
+nnoremap tf :tabfind<Space>
 
 nnoremap \ :Ack!<SPACE>
 
