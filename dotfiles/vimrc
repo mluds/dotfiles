@@ -85,6 +85,7 @@ nnoremap td :tabclose<CR>
 nnoremap tt :tabedit<Space>
 nnoremap tf :tabfind<Space>
 
+" Multi-file search; Don't jump to first result
 nnoremap \ :Ack!<SPACE>
 
 " Highlight search results
