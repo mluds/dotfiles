@@ -114,3 +114,5 @@ set noeb vb t_vb=
 
 " Auto-start NERDTree
 autocmd vimenter * NERDTree
+
+let NERDTreeShowHidden=1
