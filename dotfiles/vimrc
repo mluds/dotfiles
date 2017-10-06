@@ -11,6 +11,8 @@ Plug 'kien/ctrlp.vim'
 Plug 'valloric/youcompleteme'
 Plug 'shougo/vimproc.vim'
 Plug 'idanarye/vim-vebugger'
+Plug 'valloric/matchtagalways'
+Plug 'w0rp/ale'
 call plug#end()
 
 " Syntax highlighting; don't clobber existing highlighting
@@ -33,6 +35,7 @@ set softtabstop=4
 
 " Language specific indentation
 autocmd FileType yaml setlocal ts=2 sw=2 sts=2 indentkeys-=<:>
+autocmd FileType html setlocal ts=2 sw=2 sts=2
 
 " Tab key inserts spaces
 set expandtab
@@ -116,3 +119,8 @@ set noeb vb t_vb=
 autocmd vimenter * NERDTree
 
 let NERDTreeShowHidden=1
+
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
