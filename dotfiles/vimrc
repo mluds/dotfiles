@@ -11,9 +11,9 @@ Plug 'kien/ctrlp.vim'
 Plug 'valloric/youcompleteme'
 Plug 'shougo/vimproc.vim'
 Plug 'idanarye/vim-vebugger'
-Plug 'valloric/matchtagalways'
 Plug 'w0rp/ale'
 Plug 'posva/vim-vue'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " Syntax highlighting; don't clobber existing highlighting
