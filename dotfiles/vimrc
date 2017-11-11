@@ -6,11 +6,14 @@ set encoding=utf-8
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
-Plug 'mileszs/ack.vim'
+Plug 'mhinz/vim-grepper'
 Plug 'kien/ctrlp.vim'
 Plug 'valloric/youcompleteme'
 Plug 'shougo/vimproc.vim'
 Plug 'idanarye/vim-vebugger'
+Plug 'w0rp/ale'
+Plug 'posva/vim-vue'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " Syntax highlighting; don't clobber existing highlighting
@@ -78,15 +81,16 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Tab navigation
-nnoremap th :tabfirst<CR>
-nnoremap tj :tabnext<CR>
-nnoremap tk :tabprev<CR>
-nnoremap tl :tablast<CR>
-nnoremap td :tabclose<CR>
+nnoremap th :tabfirst<cr>
+nnoremap tj :tabnext<cr>
+nnoremap tk :tabprev<cr>
+nnoremap tl :tablast<cr>
+nnoremap td :tabclose<cr>
 nnoremap tt :tabedit<Space>
 nnoremap tf :tabfind<Space>
 
-nnoremap \ :Ack!<SPACE>
+" Multi-file search; Don't jump to first result
+nnoremap \ :Grepper -tool ack<cr>
 
 " Highlight search results
 set hlsearch
@@ -107,7 +111,15 @@ set wildmenu
 set so=5
 
 " Open NERDTree
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<cr>
 
 " Disable error sounds
 set noeb vb t_vb=
+
+let NERDTreeShowHidden=1
+
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fixers['python'] = ['yapf']
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
