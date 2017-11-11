@@ -31,15 +31,16 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-" Language specific indentation
-autocmd FileType yaml setlocal ts=2 sw=2 sts=2
-
 " Tab key inserts spaces
 set expandtab
 
 set smarttab
 set autoindent
 set smartindent
+
+" Language specific indentation
+autocmd FileType yaml setlocal ts=2 sw=2 sts=2
+autocmd FileType go setlocal noexpandtab
 
 " Don't write backup files
 set nobackup
