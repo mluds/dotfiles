@@ -40,6 +40,8 @@ HISTFILE=~/.zsh_history
 export EDITOR=vim
 export GREP_OPTIONS='--color=auto'
 export KEYTIMEOUT=1  # Delay when switching to normal mode in shell
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
 
 # Python virtualenvwrapper setup
 export WORKON_HOME=~/.pyenvs
