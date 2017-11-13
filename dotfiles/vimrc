@@ -55,6 +55,7 @@ set backspace=indent,eol,start
 
 " Horizontal movement wraps when at the start or end of a line
 set whichwrap+=<,>,h,l
+set nowrap
 
 " Show line numbers
 set number
@@ -86,6 +87,7 @@ nnoremap tj :tabnext<cr>
 nnoremap tk :tabprev<cr>
 nnoremap tl :tablast<cr>
 nnoremap td :tabclose<cr>
+nnoremap tn :tabnew<cr>
 nnoremap tt :tabedit<Space>
 nnoremap tf :tabfind<Space>
 
