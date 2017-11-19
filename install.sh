@@ -15,4 +15,4 @@ sudo yum install -y ack
 curl -fLso ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-vim +PlugInstall +qall
+vim +PlugInstall +GoInstallBinaries +qall
