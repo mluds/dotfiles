@@ -9,12 +9,14 @@ Plug 'scrooloose/nerdtree'
 Plug 'mhinz/vim-grepper'
 Plug 'kien/ctrlp.vim'
 Plug 'valloric/youcompleteme'
+Plug 'w0rp/ale'
+Plug 'tpope/vim-surround'
+Plug 'posva/vim-vue'
+Plug 'fatih/vim-go'
+
+" vebugger
 Plug 'shougo/vimproc.vim'
 Plug 'idanarye/vim-vebugger'
-Plug 'w0rp/ale'
-Plug 'posva/vim-vue'
-Plug 'tpope/vim-surround'
-Plug 'fatih/vim-go'
 call plug#end()
 
 let mapleader = " "
@@ -87,8 +89,8 @@ nnoremap tk :tabprev<cr>
 nnoremap tl :tablast<cr>
 nnoremap td :tabclose<cr>
 nnoremap tn :tabnew<cr>
-nnoremap tt :tabedit<Space>
-nnoremap tf :tabfind<Space>
+nnoremap tt :tabedit<space>
+nnoremap tf :tabfind<space>
 
 " Multi-file search; Don't jump to first result
 nnoremap \ :Grepper -tool ack<cr>
@@ -127,6 +129,8 @@ let g:ale_javascript_prettier_use_local_config = 1
 
 " YCM
 nnoremap <leader>g :YcmCompleter GoTo<cr>
+set completeopt-=preview  " Disable preview window
+let g:ycm_add_preview_to_completeopt = 0
 
 " Language specific settings
 autocmd FileType yaml setlocal ts=2 sw=2 sts=2
@@ -134,8 +138,18 @@ autocmd FileType yaml setlocal ts=2 sw=2 sts=2
 " Go settings
 let g:go_fmt_autosave = 1
 let g:go_def_mapping_enabled = 0
-let g:go_auto_type_info = 1
-let g:go_updatetime = 100
+
+" Enabling these settings cause rendering artifacts to appear
+let g:go_auto_type_info = 0
+let g:go_updatetime = 200
+let g:go_fold_enable = []
+
+" Always use semantic engine rather than basic identifier engine
+let g:ycm_semantic_triggers = {
+    \'go': ['re!^\s*\S\S']
+\}
+autocmd filetype go let b:ycm_min_num_of_chars_for_completion = 999
+
 autocmd filetype go let b:ale_enabled = 0
 autocmd filetype go setlocal noexpandtab nolist
 autocmd filetype go nnoremap <buffer> <leader>g :GoDef<cr>
@@ -144,3 +158,5 @@ autocmd filetype go nnoremap <buffer> <leader>t :GoInfo<cr>
 autocmd filetype go nnoremap <buffer> <leader>i :GoInstall<cr>
 autocmd filetype go nnoremap <buffer> <leader>r :GoRun<cr>
 autocmd filetype go nnoremap <buffer> <leader>l :GoMetaLinter<cr>
+autocmd filetype go nnoremap <buffer> <leader>c :GoCallers<cr>
+autocmd filetype go nnoremap <buffer> <leader>m :GoRename<space>
