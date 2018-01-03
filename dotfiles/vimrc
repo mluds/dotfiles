@@ -77,10 +77,10 @@ set splitbelow
 set splitright
 
 " Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 " Tab navigation
 nnoremap th :tabfirst<cr>
@@ -94,6 +94,10 @@ nnoremap tf :tabfind<space>
 
 " Multi-file search; Don't jump to first result
 nnoremap \ :Grepper -tool ack<cr>
+
+" Add "open in tab" functionality to quickfix list in Grepper
+" Alternatively use the 'romainl/vim-qf' plugin
+autocmd FileType qf nnoremap <buffer> <silent> t <c-w><cr><c-w>T
 
 " Highlight search results
 set hlsearch
