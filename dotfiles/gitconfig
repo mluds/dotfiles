@@ -18,8 +18,10 @@
   lg = "!git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 
   a = add
+  aa = add .
   c = commit -m
   ca = commit --amend
+  pom = push origin master
 
   d = diff
   ds = diff --stat
