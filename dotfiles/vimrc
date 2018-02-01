@@ -56,17 +56,19 @@ set backspace=indent,eol,start
 
 " Horizontal movement wraps when at the start or end of a line
 set whichwrap+=<,>,h,l
-set nowrap
+set wrap
+
+" Disable annoying hard wrapping
+set textwidth=0
+
+" Make it obvious where 80 characters is
+set colorcolumn=80
 
 " Show line numbers
 set number
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
-
-" Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
 
 " Key sequence timeouts
 set timeoutlen=500
@@ -138,6 +140,7 @@ let g:ycm_add_preview_to_completeopt = 0
 
 " Language specific settings
 autocmd FileType yaml setlocal ts=2 sw=2 sts=2
+autocmd FileType vim setlocal tw=0
 
 " Go settings
 let g:go_fmt_autosave = 1
