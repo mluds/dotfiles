@@ -34,3 +34,6 @@ set -sg escape-time 0
 
 # Fix problem where C-h is interpreted as <BS> in terminal
 bind-key -n Bspace send-keys C-h
+
+setw -g window-status-format "#I:#W  "
+setw -g window-status-current-format ">>#I:#W<<  "
