@@ -1,12 +1,23 @@
 #!/bin/bash
 
-# Get dotfiles directory
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/dotfiles"
-
 # Install dotfiles
-for name in $(ls $DIR); do
-  ln -sf $DIR/$name ~/.$name
+OLDIFS=$IFS
+IFS=','
+for path in \
+    bash,.bashrc \
+    fish,.config/fish/config.fish \
+    git,.gitconfig \
+    gvim,.gvimrc \
+    tmux,.tmux.conf \
+    vim,.vimrc \
+    zsh,.zshrc \
+; do
+    set -- $path
+    target=$HOME/$2
+    mkdir -p $(dirname $target)
+    ln -sf "$(pwd)/$1" "$target"
 done
+IFS=$OLDIFS
 
 # Vim deps
 sudo yum install -y ack
