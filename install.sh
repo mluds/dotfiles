@@ -19,8 +19,7 @@ for path in \
 done
 IFS=$OLDIFS
 
-# Vim deps
-sudo yum install -y ack
+sudo yum install -y ack cowsay
 
 # Install vim-plug
 curl -fLso ~/.vim/autoload/plug.vim --create-dirs \
