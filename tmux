@@ -8,7 +8,7 @@ set-option -g prefix C-s
 bind-key C-s send-prefix
 
 # Default shell (for when tmux is the login shell)
-set -g default-shell '/bin/fish'
+set -g default-shell '/usr/bin/zsh'
 
 # Act like Vim
 set-window-option -g mode-keys vi
