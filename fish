@@ -1,3 +1,8 @@
+set -x PYENV_ROOT $HOME/.pyenv
+set -x PATH /usr/sbin $PYENV_ROOT/bin $PATH
+
+status --is-interactive; and source (pyenv init -|psub)
+
 fish_vi_key_bindings
 
 function fish_greeting
