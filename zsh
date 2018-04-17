@@ -2,24 +2,26 @@ autoload -Uz compinit promptinit
 compinit
 promptinit
 
-setopt AUTO_CD
-setopt VI
-setopt NO_BEEP
-setopt EXTENDED_GLOB
+setopt auto_cd
+setopt vi
+setopt no_beep
+setopt extended_glob
+setopt noautomenu
+setopt nomenucomplete
 
 # History
-setopt APPEND_HISTORY
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_REDUCE_BLANKS
-setopt EXTENDED_HISTORY
+setopt append_history
+setopt inc_append_history
+setopt share_history
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+setopt extended_history
 
-unsetopt FLOW_CONTROL  # Disable ctrl-S/Q tty halting
+unsetopt flow_control  # Disable ctrl-S/Q tty halting
 
-alias ls='ls --color=auto'
-alias ll='ls -lah'
+alias ll='ls -lah --color=auto'
+alias ls='ll'
 alias vi='vim'
 alias df='df -Th'
 alias mkdir='mkdir -p'
@@ -33,10 +35,11 @@ bindkey '^F' history-incremental-search-forward
 bindkey '^?' backward-delete-char
 bindkey '^H' backward-delete-char
 
-SAVEHIST=10000
-HISTSIZE=10000
+SAVEHIST=100000
+HISTSIZE=100000
 HISTFILE=~/.zsh_history
 
+export PROMPT='%n %~> '
 export EDITOR=vim
 export GREP_OPTIONS='--color=auto'
 export KEYTIMEOUT=1  # Delay when switching to normal mode in shell
@@ -49,3 +52,5 @@ venvwrap_script=/usr/bin/virtualenvwrapper.sh
 python3_path=/usr/bin/python3.6
 [[ -x $python3_path ]] && export VIRTUALENVWRAPPER_PYTHON=$python3_path
 [[ -x $venvwrap_script ]] && source $venvwrap_script
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
