@@ -167,3 +167,7 @@ autocmd filetype go nnoremap <buffer> <leader>r :GoRun<cr>
 autocmd filetype go nnoremap <buffer> <leader>l :GoMetaLinter<cr>
 autocmd filetype go nnoremap <buffer> <leader>c :GoCallers<cr>
 autocmd filetype go nnoremap <buffer> <leader>m :GoRename<space>
+
+" fzf
+set rtp+=~/.fzf
+nnoremap <leader>f :FZF<cr>
