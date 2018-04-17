@@ -26,3 +26,5 @@ export GREP_OPTIONS='--color=auto'
 
 # Ignore duplicate history entries
 export HISTCONTROL=ignoredups
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
