@@ -21,6 +21,9 @@ IFS=$OLDIFS
 
 sudo yum install -y ack cowsay
 
+# pyenv
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
