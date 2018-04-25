@@ -4,7 +4,6 @@ set encoding=utf-8
 
 " vim-plug plugin manager
 call plug#begin('~/.vim/plugged')
-Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'mhinz/vim-grepper'
 Plug 'kien/ctrlp.vim'
@@ -13,6 +12,9 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
 Plug 'posva/vim-vue'
 Plug 'fatih/vim-go'
+
+" Colors
+Plug 'jonathanfilip/vim-lucius'
 
 " vebugger
 Plug 'shougo/vimproc.vim'
@@ -30,9 +32,13 @@ endif
 set path+=**
 
 " Color scheme
-set background=dark
 silent! colo desert
-silent! colo solarized
+silent! colo lucius
+
+set background=light
+LuciusWhite
+"set background=dark
+"LuciusBlack
 
 " Tab width; backspace properly removes a tab
 set tabstop=4
