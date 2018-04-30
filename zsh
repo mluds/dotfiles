@@ -20,8 +20,8 @@ setopt extended_history
 
 unsetopt flow_control  # Disable ctrl-S/Q tty halting
 
-alias ll='ls -lah --color=auto'
-alias ls='ll'
+alias ls='ls -lh --color=never'
+alias ll='ls -a'
 alias vi='vim'
 alias df='df -Th'
 alias mkdir='mkdir -p'
