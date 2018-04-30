@@ -39,7 +39,7 @@ SAVEHIST=100000
 HISTSIZE=100000
 HISTFILE=~/.zsh_history
 
-export PROMPT='%n %~> '
+export PROMPT='%n@%m %~> '
 export EDITOR=vim
 export GREP_OPTIONS='--color=auto'
 export KEYTIMEOUT=1  # Delay when switching to normal mode in shell
