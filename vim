@@ -23,6 +23,10 @@ call plug#end()
 
 let mapleader = " "
 
+" Common sequences
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
+
 " Syntax highlighting; don't clobber existing highlighting
 if !exists("g:syntax_on")
     syntax enable
