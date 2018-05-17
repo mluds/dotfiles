@@ -26,6 +26,7 @@ let mapleader = " "
 " Common sequences
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
+nnoremap <leader>a :qa<cr>
 
 " Syntax highlighting; don't clobber existing highlighting
 if !exists("g:syntax_on")
@@ -40,9 +41,9 @@ silent! colo desert
 silent! colo lucius
 
 set background=light
-LuciusWhite
-"set background=dark
-"LuciusBlack
+if exists(':LuciusWhite')
+    LuciusWhite
+endif
 
 " Tab width; backspace properly removes a tab
 set tabstop=4
