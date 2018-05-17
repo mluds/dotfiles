@@ -134,7 +134,9 @@ set so=5
 set noeb vb t_vb=
 
 " NERDTree
-let NERDTreeShowHidden=1
+let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowCollapsible = 'v'
+let g:NERDTreeShowHidden = 1
 map <C-n> :NERDTreeToggle<cr>
 
 " ALE
