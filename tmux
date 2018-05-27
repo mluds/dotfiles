@@ -1,7 +1,3 @@
-# UTF-8. Fixes rendering issue with vim
-# If using tmux as the default shell, set LANG=en_US.UTF-8 in /etc/environment
-set-option -g utf8 on
-
 # Rebind prefix
 unbind C-b
 set-option -g prefix C-s
