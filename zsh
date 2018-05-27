@@ -40,7 +40,8 @@ HISTSIZE=100000
 HISTFILE=~/.zsh_history
 
 export PROMPT='%n@%m %~> '
-export EDITOR=vim
+export VISUAL=vim
+export EDITOR="$VISUAL"
 export GREP_OPTIONS='--color=auto'
 export KEYTIMEOUT=1  # Delay when switching to normal mode in shell
 export GOPATH=~/go
