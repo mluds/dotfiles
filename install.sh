@@ -11,6 +11,7 @@ for path in \
     tmux,.tmux.conf \
     vim,.vimrc \
     zsh,.zshrc \
+    i3,.i3/config \
 ; do
     set -- $path
     target=$HOME/$2
