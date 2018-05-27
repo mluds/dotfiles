@@ -26,6 +26,7 @@ alias vi='vim'
 alias df='df -Th'
 alias mkdir='mkdir -p'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias grep='grep --color=auto'
 
 # History search
 bindkey '^R' history-incremental-search-backward
@@ -35,6 +36,9 @@ bindkey '^F' history-incremental-search-forward
 bindkey '^?' backward-delete-char
 bindkey '^H' backward-delete-char
 
+# Faster keyboard (delay in ms, repeats per sec)
+xset r rate 200 40
+
 SAVEHIST=100000
 HISTSIZE=100000
 HISTFILE=~/.zsh_history
@@ -42,7 +46,6 @@ HISTFILE=~/.zsh_history
 export PROMPT='%n@%m %~> '
 export VISUAL=vim
 export EDITOR="$VISUAL"
-export GREP_OPTIONS='--color=auto'
 export KEYTIMEOUT=1  # Delay when switching to normal mode in shell
 export GOPATH=~/go
 export PYENV_ROOT=$HOME/.pyenv
