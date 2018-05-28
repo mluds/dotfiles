@@ -12,6 +12,7 @@ for path in \
     vim,.vimrc \
     zsh,.zshrc \
     i3,.i3/config \
+    Xresources,.Xresources \
 ; do
     set -- $path
     target=$HOME/$2

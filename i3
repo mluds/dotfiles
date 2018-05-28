@@ -1,6 +1,6 @@
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 11
+font pango:Liberation Mono 11
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -13,7 +13,7 @@ set $right l
 floating_modifier Mod1
 
 # start a terminal
-bindsym Mod1+Return exec i3-sensible-terminal
+bindsym Mod1+Return exec xterm
 
 # kill focused window
 bindsym Mod1+Shift+q kill
