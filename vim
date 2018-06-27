@@ -89,6 +89,9 @@ set ttimeoutlen=0
 set splitbelow
 set splitright
 
+" Fixes indentation issue when pasting from external clipboards
+set paste
+
 " Quicker window movement
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
