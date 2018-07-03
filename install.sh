@@ -21,8 +21,8 @@ for path in \
 done
 IFS=$OLDIFS
 
-sudo yum install -y epel-release
-sudo yum install -y ack cowsay tmux zsh
+sudo yum install -y epel-release http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm
+sudo yum install -y ack cowsay tmux zsh git
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
