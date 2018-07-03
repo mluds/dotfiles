@@ -21,7 +21,8 @@ for path in \
 done
 IFS=$OLDIFS
 
-sudo yum install -y ack cowsay
+sudo yum install -y epel-release
+sudo yum install -y ack cowsay tmux zsh
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
