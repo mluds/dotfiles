@@ -37,7 +37,9 @@ bindkey '^?' backward-delete-char
 bindkey '^H' backward-delete-char
 
 # Faster keyboard (delay in ms, repeats per sec)
-xset r rate 200 40
+if command -v xset; then
+    xset r rate 200 40 >/dev/null 2&>1
+fi
 
 # Disable Crtl+S halting
 stty -ixon
@@ -68,4 +70,6 @@ python3_path=/usr/bin/python3.6
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit; }
 
 # motd
-cowsay -f tux "I'd just like to interject for a moment. What you're referring to as Linux, is in fact, GNU/Linux, or as I've recently taken to calling it, GNU plus Linux. Linux is not an operating system unto itself, but rather another free component of a fully functioning GNU system made useful by the GNU corelibs, shell utilities and vital system components comprising a full OS as defined by POSIX."
+if command -v cowsay; then
+    cowsay -f tux "I'd just like to interject for a moment. What you're referring to as Linux, is in fact, GNU/Linux, or as I've recently taken to calling it, GNU plus Linux. Linux is not an operating system unto itself, but rather another free component of a fully functioning GNU system made useful by the GNU corelibs, shell utilities and vital system components comprising a full OS as defined by POSIX."
+fi
