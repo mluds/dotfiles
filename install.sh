@@ -22,7 +22,7 @@ done
 IFS=$OLDIFS
 
 sudo yum install -y epel-release http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm
-sudo yum install -y ack cowsay tmux zsh git
+sudo yum install -y ack cowsay tmux zsh git xorg-x11-server-utils
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
