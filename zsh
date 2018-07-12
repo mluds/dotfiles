@@ -38,7 +38,7 @@ bindkey '^H' backward-delete-char
 
 # Faster keyboard (delay in ms, repeats per sec)
 if hash xset 2>/dev/null; then
-    xset r rate 200 40 >/dev/null 2&>1
+    xset r rate 200 40 >/dev/null 2>&1
 fi
 
 # Disable Crtl+S halting
@@ -57,7 +57,9 @@ export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PATH:$GOPATH/bin:$PYENV_ROOT/bin
 
 # pyenv
-eval "$(pyenv init -)"
+if hash cowsay 2>/dev/null; then
+    eval "$(pyenv init -)"
+fi
 
 # Python virtualenvwrapper setup
 export WORKON_HOME=~/.pyenvs
