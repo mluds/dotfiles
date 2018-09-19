@@ -5,7 +5,6 @@ set encoding=utf-8
 " vim-plug plugin manager
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree'       " file navigation bar
 Plug 'mhinz/vim-grepper'         " find-in-files; used with ack
 Plug 'w0rp/ale'                  " linting engine
 Plug 'tpope/vim-surround'        " modify 'surrounding'; good for html
@@ -130,6 +129,13 @@ let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = 'v'
 let g:NERDTreeShowHidden = 1
 map <C-n> :NERDTreeToggle<cr>
+
+" netrw - file browser
+nnoremap <leader>z :Lexplore<cr>
+let g:netrw_liststyle = 3     " tree view
+let g:netrw_banner = 0        " remove the top banner
+let g:netrw_browse_split = 2  " open file in last window
+let g:netrw_winsize = 20      " window width (percent)
 
 " ale
 let g:ale_fix_on_save = 0
