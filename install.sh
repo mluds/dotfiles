@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Install dotfiles
+# install dotfiles
 OLDIFS=$IFS
 IFS=','
 for path in \
@@ -21,7 +21,9 @@ for path in \
 done
 IFS=$OLDIFS
 
-sudo yum install -y epel-release http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm
+sudo yum install -y \
+	epel-release \
+	http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm
 sudo yum install -y ack cowsay tmux zsh git xorg-x11-server-utils
 
 # pyenv
@@ -31,8 +33,19 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
 
-# Install vim-plug
+# install vim-plug and plugins
 curl -fLso ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 vim +PlugInstall +GoInstallBinaries +qall
+
+# install YCM
+curl -sL https://rpm.nodesource.com/setup_8.x | sudo -E bash -
+sudo yum install -y \
+	automake gcc gcc-c++ kernel-devel cmake \
+	python-devel python3-devel \
+	nodejs
+~/.vim/plugged/youcompleteme/install.py \
+	--clang-completer \
+	--js-completer
+
+sudo python -m pip install flake8
