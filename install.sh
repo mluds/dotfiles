@@ -21,10 +21,28 @@ for path in \
 done
 IFS=$OLDIFS
 
-sudo yum install -y \
-	epel-release \
-	http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm
-sudo yum install -y ack cowsay tmux zsh git xorg-x11-server-utils
+# get linux distro id
+. /etc/os-release
+
+# OS packages
+if [ $ID == "centos" ]; then
+	curl -sL https://rpm.nodesource.com/setup_10.x | sudo -E bash -
+	sudo yum install -y \
+		epel-release \
+		http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm
+	sudo yum install -y \
+		ack cowsay tmux zsh git xorg-x11-server-utils \
+		automake gcc gcc-c++ kernel-devel cmake \
+		python-devel python3-devel \
+		nodejs
+elif [ $ID == "ubuntu" ]; then
+	curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+	sudo apt update && sudo apt install -y \
+		ack cowsay tmux zsh git x11-xserver-utils \
+		automake gcc g++ linux-headers-generic cmake \
+		python-dev python-pip python3-dev \
+		nodejs
+fi
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
@@ -39,11 +57,6 @@ curl -fLso ~/.vim/autoload/plug.vim --create-dirs \
 vim +PlugInstall +GoInstallBinaries +qall
 
 # install YCM
-curl -sL https://rpm.nodesource.com/setup_8.x | sudo -E bash -
-sudo yum install -y \
-	automake gcc gcc-c++ kernel-devel cmake \
-	python-devel python3-devel \
-	nodejs
 ~/.vim/plugged/youcompleteme/install.py \
 	--clang-completer \
 	--js-completer

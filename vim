@@ -52,6 +52,7 @@ set softtabstop=4
 
 " Tab key inserts spaces
 set expandtab
+autocmd filetype c set noexpandtab
 
 set smarttab
 set autoindent
