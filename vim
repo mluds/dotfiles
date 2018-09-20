@@ -54,6 +54,7 @@ set softtabstop=4
 
 " tab key inserts spaces
 set expandtab
+autocmd filetype c set noexpandtab
 
 set smarttab
 set autoindent
@@ -143,6 +144,10 @@ autocmd filetype python let b:ale_linters = ['flake8']
 nnoremap <leader>g :YcmCompleter GoTo<cr>
 set completeopt-=preview  " Disable preview window
 let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_semantic_triggers = {
+    \'go': ['re!^\s*\S\S']
+\}
 
 " language specific settings
 autocmd FileType yaml setlocal ts=2 sw=2 sts=2
@@ -158,9 +163,6 @@ let g:go_updatetime = 200
 let g:go_fold_enable = []
 
 " always use semantic engine rather than basic identifier engine
-let g:ycm_semantic_triggers = {
-    \'go': ['re!^\s*\S\S']
-\}
 autocmd filetype go let b:ycm_min_num_of_chars_for_completion = 999
 autocmd filetype go let b:ale_enabled = 0
 autocmd filetype go setlocal noexpandtab nolist
