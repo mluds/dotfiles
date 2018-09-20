@@ -154,6 +154,10 @@ let g:ale_javascript_prettier_use_local_config = 1
 nnoremap <leader>g :YcmCompleter GoTo<cr>
 set completeopt-=preview  " Disable preview window
 let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_semantic_triggers = {
+    \'go': ['re!^\s*\S\S']
+\}
 
 " Language specific settings
 autocmd FileType yaml setlocal ts=2 sw=2 sts=2
@@ -169,11 +173,7 @@ let g:go_updatetime = 200
 let g:go_fold_enable = []
 
 " Always use semantic engine rather than basic identifier engine
-let g:ycm_semantic_triggers = {
-    \'go': ['re!^\s*\S\S']
-\}
 autocmd filetype go let b:ycm_min_num_of_chars_for_completion = 999
-
 autocmd filetype go let b:ale_enabled = 0
 autocmd filetype go setlocal noexpandtab nolist
 autocmd filetype go nnoremap <buffer> <leader>g :GoDef<cr>
