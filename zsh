@@ -27,6 +27,7 @@ alias df='df -Th'
 alias mkdir='mkdir -p'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias grep='grep --color=auto'
+alias ip='ip -c'
 
 # History search
 bindkey '^R' history-incremental-search-backward
