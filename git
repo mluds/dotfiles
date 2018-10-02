@@ -44,3 +44,6 @@
 
   # list aliases
   la = "!git config -l | grep alias | cut -c 7-"
+
+  # history search - prints changes that contain the string (-S)
+  hs = log --pickaxe-regex -p --color-words -S
