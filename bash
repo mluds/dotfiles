@@ -28,3 +28,4 @@ export GREP_OPTIONS='--color=auto'
 export HISTCONTROL=ignoredups
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export EDITOR=vim
