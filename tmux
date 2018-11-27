@@ -12,6 +12,7 @@ bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
+bind c new-window -c "#{pane_current_path}"
 
 # Improve colors
 set -g default-terminal 'screen-256color'
