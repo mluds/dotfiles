@@ -129,6 +129,8 @@ set noeb vb t_vb=  " disable error sounds
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = 'v'
 let g:NERDTreeShowHidden = 1
+" fixes bug where first letter gets cut off
+let g:NERDTreeNodeDelimiter = "\t"
 map <C-n> :NERDTreeToggle<cr>
 
 " ale
