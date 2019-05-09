@@ -52,8 +52,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-" tab key inserts spaces
-set expandtab
 
 set smarttab
 set autoindent
@@ -175,3 +173,7 @@ autocmd filetype go nnoremap <buffer> <leader>r :GoRun<cr>
 autocmd filetype go nnoremap <buffer> <leader>l :GoMetaLinter<cr>
 autocmd filetype go nnoremap <buffer> <leader>c :GoCallers<cr>
 autocmd filetype go nnoremap <buffer> <leader>m :GoRename<space>
+
+" tab key inserts spaces
+" this is at the end to overwrite any hidden settings that affect it
+set expandtab
