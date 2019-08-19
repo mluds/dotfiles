@@ -11,6 +11,10 @@
 [color]
   ui = auto
 
+[color "diff"]
+  old = red bold
+  new = blue bold
+
 [alias]
   # list commits
   l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
