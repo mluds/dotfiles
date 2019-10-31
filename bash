@@ -27,3 +27,5 @@ export HISTCONTROL=ignoredups
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export EDITOR=vim
+
+export TMOUT=0
