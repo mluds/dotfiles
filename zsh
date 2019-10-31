@@ -56,7 +56,6 @@ export KEYTIMEOUT=1  # Delay when switching to normal mode in shell
 export GOPATH=~/go
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PATH:$GOPATH/bin:$PYENV_ROOT/bin
-export TMOUT=0
 
 # pyenv
 if hash cowsay 2>/dev/null; then
