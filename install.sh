@@ -5,6 +5,7 @@ OLDIFS=$IFS
 IFS=','
 for path in \
     bash,.bashrc \
+    profile,.profile \
     fish,.config/fish/config.fish \
     git,.gitconfig \
     gvim,.gvimrc \

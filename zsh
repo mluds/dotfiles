@@ -71,8 +71,3 @@ python3_path=/usr/bin/python3.6
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit; }
-
-# motd
-if hash cowsay 2>/dev/null; then
-    cowsay -f tux "My name is Linus Torvalds and I am your god."
-fi
