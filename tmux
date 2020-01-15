@@ -1,8 +1,3 @@
-# Rebind prefix
-unbind C-b
-set-option -g prefix C-s
-bind-key C-s send-prefix
-
 # Default shell (for when tmux is the login shell)
 set -g default-shell '/usr/bin/zsh'
 
