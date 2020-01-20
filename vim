@@ -12,6 +12,7 @@ Plug 'tpope/vim-surround'        " modify 'surrounding'; good for html
 Plug 'fatih/vim-go'              " IDE functionality for go
 Plug 'jonathanfilip/vim-lucius'  " light/dark color scheme
 Plug 'posva/vim-vue'             " vue syntax highlighting
+Plug 'lervag/vimtex'
 
 " vebugger - interactive debugging from vim
 Plug 'shougo/vimproc.vim'

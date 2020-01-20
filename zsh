@@ -54,20 +54,9 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 export KEYTIMEOUT=1  # Delay when switching to normal mode in shell
 export GOPATH=~/go
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PATH:$GOPATH/bin:$PYENV_ROOT/bin
-
-# pyenv
-if hash cowsay 2>/dev/null; then
-    eval "$(pyenv init -)"
-fi
-
-# Python virtualenvwrapper setup
-export WORKON_HOME=~/.pyenvs
-venvwrap_script=/usr/bin/virtualenvwrapper.sh
-python3_path=/usr/bin/python3.6
-[[ -x $python3_path ]] && export VIRTUALENVWRAPPER_PYTHON=$python3_path
-[[ -x $venvwrap_script ]] && source $venvwrap_script
+export PATH=$PATH:$GOPATH/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit; }
+
+cd $HOME/code/
