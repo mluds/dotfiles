@@ -2,6 +2,10 @@
 scriptencoding utf-8
 set encoding=utf-8
 
+" settings for scp editing with pi_netrw
+set nocp
+filetype plugin on
+
 " vim-plug plugin manager
 call plug#begin('~/.vim/plugged')
 
@@ -12,7 +16,7 @@ Plug 'tpope/vim-surround'        " modify 'surrounding'; good for html
 Plug 'fatih/vim-go'              " IDE functionality for go
 Plug 'jonathanfilip/vim-lucius'  " light/dark color scheme
 Plug 'posva/vim-vue'             " vue syntax highlighting
-Plug 'lervag/vimtex'
+Plug 'lervag/vimtex'             " latex tools
 
 " vebugger - interactive debugging from vim
 Plug 'shougo/vimproc.vim'
@@ -26,6 +30,14 @@ let mapleader = " "
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>a :qa<cr>
+nnoremap <leader>t :terminal bash<cr>
+
+" system clipboard integration
+" i.e. use '+' register by default
+nnoremap y "+y
+vnoremap y "+y
+nnoremap p "+p
+nnoremap P "+P
 
 " syntax highlighting; don't clobber existing highlighting
 if !exists("g:syntax_on")
@@ -52,7 +64,6 @@ endif
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-
 
 set smarttab
 set autoindent
@@ -90,8 +101,11 @@ set ttimeoutlen=0
 set splitbelow
 set splitright
 
-" fixes indentation issue when pasting from external clipboards
-set paste
+" disable all bell sounds
+" for WSL shells, you also need to put 'set bell-style none' in /etc/inputrc
+set belloff=all
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb= belloff=all
 
 " quicker window movement
 nnoremap <c-j> <c-w>j
@@ -112,6 +126,9 @@ nnoremap tf :tabfind<space>
 " multi-file search; don't jump to first result
 nnoremap \ :Grepper -tool ack<cr>
 
+" use escape to exit terminal mode
+tnoremap <Esc> <C-\><C-n>
+
 " add "open in tab" functionality to quickfix list in grepper
 " alternatively use the 'romainl/vim-qf' plugin
 autocmd FileType qf nnoremap <buffer> <silent> t <c-w><cr><c-w>T
@@ -123,6 +140,11 @@ set autoread       " set to auto read when a file is changed from the outside
 set wildmenu       " visual autocomplete for command menu
 set so=5           " lines from screen edge when vertical scrolling starts
 set noeb vb t_vb=  " disable error sounds
+
+" fixes indentation issue when pasting from external clipboards
+" commented out for now,
+" since checkhealth recommends not setting it permanently
+" set paste
 
 " nerdtree
 let g:NERDTreeDirArrowExpandable = '>'
