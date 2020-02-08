@@ -36,6 +36,9 @@ nnoremap <leader>t :terminal bash<cr>
 " i.e. use '+' register by default
 nnoremap y "+y
 vnoremap y "+y
+nnoremap d "+d
+vnoremap d "+d
+
 nnoremap p "+p
 nnoremap P "+P
 
