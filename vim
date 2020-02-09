@@ -38,6 +38,8 @@ nnoremap y "+y
 vnoremap y "+y
 nnoremap d "+d
 vnoremap d "+d
+nnoremap x "+x
+vnoremap x "+x
 
 nnoremap p "+p
 nnoremap P "+P
