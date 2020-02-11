@@ -132,7 +132,7 @@ nnoremap tf :tabfind<space>
 nnoremap \ :Grepper -tool ack<cr>
 
 " use escape to exit terminal mode
-tnoremap <Esc> <C-\><C-n>
+tnoremap <leader><Esc> <C-\><C-n>
 
 " add "open in tab" functionality to quickfix list in grepper
 " alternatively use the 'romainl/vim-qf' plugin
