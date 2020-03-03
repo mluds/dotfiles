@@ -26,6 +26,13 @@ alias vi='vim'
 alias df='df -Th'
 alias mkdir='mkdir -p'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias d='docker'
+alias dps='docker ps'
+alias dl='docker logs -f'
+alias de='docker exec -it'
+alias di='docker images'
+alias drma='docker ps -qa | xargs docker rm'
+alias drmia='docker images -qa | xargs docker rmi'
 
 # History search
 bindkey '^R' history-incremental-search-backward
@@ -60,4 +67,3 @@ python3_path=/usr/bin/python3.6
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # motd
-cowsay -f tux "I'd just like to interject for a moment. What you're referring to as Linux, is in fact, GNU/Linux, or as I've recently taken to calling it, GNU plus Linux. Linux is not an operating system unto itself, but rather another free component of a fully functioning GNU system made useful by the GNU corelibs, shell utilities and vital system components comprising a full OS as defined by POSIX."
