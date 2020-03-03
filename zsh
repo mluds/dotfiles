@@ -20,8 +20,8 @@ setopt extended_history
 
 unsetopt flow_control  # Disable ctrl-S/Q tty halting
 
-alias ll='ls -lah --color=auto'
-alias ls='ll'
+alias ls='ls -lh --color=never'
+alias ll='ls -a'
 alias vi='vim'
 alias df='df -Th'
 alias mkdir='mkdir -p'
@@ -33,6 +33,8 @@ alias de='docker exec -it'
 alias di='docker images'
 alias drma='docker ps -qa | xargs docker rm'
 alias drmia='docker images -qa | xargs docker rmi'
+alias grep='grep --color=auto'
+alias ip='ip -c'
 
 # History search
 bindkey '^R' history-incremental-search-backward
@@ -42,28 +44,26 @@ bindkey '^F' history-incremental-search-forward
 bindkey '^?' backward-delete-char
 bindkey '^H' backward-delete-char
 
+# Faster keyboard (delay in ms, repeats per sec)
+if hash xset 2>/dev/null; then
+    xset r rate 200 40 >/dev/null 2>&1
+fi
+
+# Disable Crtl+S halting
+stty -ixon
+
 SAVEHIST=100000
 HISTSIZE=100000
 HISTFILE=~/.zsh_history
 
-export PROMPT='%n %~> '
-export EDITOR=vim
-export GREP_OPTIONS='--color=auto'
+export PROMPT='%n@%m %~> '
+export VISUAL=vim
+export EDITOR="$VISUAL"
 export KEYTIMEOUT=1  # Delay when switching to normal mode in shell
 export GOPATH=~/go
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PATH:$GOPATH/bin:$PYENV_ROOT/bin
-
-# pyenv
-eval "$(pyenv init -)"
-
-# Python virtualenvwrapper setup
-export WORKON_HOME=~/.pyenvs
-venvwrap_script=/usr/bin/virtualenvwrapper.sh
-python3_path=/usr/bin/python3.6
-[[ -x $python3_path ]] && export VIRTUALENVWRAPPER_PYTHON=$python3_path
-[[ -x $venvwrap_script ]] && source $venvwrap_script
+export PATH=$PATH:$GOPATH/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit; }
 
-# motd
+cd $HOME/code/

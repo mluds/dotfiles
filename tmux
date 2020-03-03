@@ -1,12 +1,3 @@
-# UTF-8. Fixes rendering issue with vim
-# If using tmux as the default shell, set LANG=en_US.UTF-8 in /etc/environment
-set-option -g utf8 on
-
-# Rebind prefix
-unbind C-b
-set-option -g prefix C-s
-bind-key C-s send-prefix
-
 # Default shell (for when tmux is the login shell)
 set -g default-shell '/usr/bin/zsh'
 
@@ -16,11 +7,14 @@ bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
+bind c new-window -c "#{pane_current_path}"
 
 # Improve colors
 set -g default-terminal 'screen-256color'
 set -g status-bg black
-set -g status-fg brightblue
+set -g status-fg white
+#set -g status-bg black
+#set -g status-fg brightblue
 
 # Remove administrative debris in status bar
 set -g status-left ''
@@ -36,4 +30,4 @@ set -sg escape-time 0
 bind-key -n Bspace send-keys C-h
 
 setw -g window-status-format " #I:#W "
-setw -g window-status-current-format "#[fg=black,bg=brightblue] #I:#W "
+setw -g window-status-current-format "#[fg=black,bg=colour255] #I:#W "
