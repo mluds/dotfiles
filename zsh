@@ -65,5 +65,3 @@ export PATH=$PATH:$GOPATH/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit; }
-
-cd $HOME/code/
